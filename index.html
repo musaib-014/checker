@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+                .container{
+                        width: 100%;
+                        height: 90vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                }
+                .domainName{
+                        width: 800px;
+                        height: 50px;
+                        font-size: 50px;
+                }
+                .submit{
+                        width: 100px;
+                        height: 50px;
+                        border-radius: 5px;
+                }
+        </style>
+        <title>Checker</title>
+
+</head>
+<body>
+        
+        <div class="container">
+                <div>
+                <h1>Check Domain Ratind and Domain Traffic in Different Tabs</h1>
+                <div>
+                <input type="text" placeholder="Enter Domain Name" class="domainName" />
+                <input type="button" class="submit" value="Check" />
+        </div>
+        </div>
+        </div>
+
+        <script>
+               
+                const domainName = document.querySelector(".domainName");
+                const button = document.querySelector(".submit");
+                button.addEventListener('click',()=>{
+                        window.open(`https://ahrefs.com/website-authority-checker/?input=${domainName.value}`)
+                        setTimeout(function () {
+                                window.open(`https://ahrefs.com/traffic-checker/?input=${domainName.value}`,'_blank')
+                        },1000)
+
+                })
+               
+        </script>
+</body>
+</html>
